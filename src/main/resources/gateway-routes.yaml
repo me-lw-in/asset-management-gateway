@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: users-route
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/users/**
+
+            - id: user-invitations-route
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/user-invitations/**
