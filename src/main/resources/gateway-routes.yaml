@@ -13,3 +13,18 @@ spring:
               uri: lb://USER-SERVICE
               predicates:
                 - Path=/api/user-invitations/**
+
+            - id: otp-route
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/otp/**
+
+            - id: auth-route
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/auth/**
+
+            - id: department-route
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/departments/**
